@@ -19,6 +19,15 @@ application {
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(19))
+    }
+}
+kotlin {
+    jvmToolchain(19)
+}
+
 repositories {
     mavenCentral()
 }
