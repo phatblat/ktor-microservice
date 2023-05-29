@@ -2,6 +2,7 @@ val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
 val junit_version: String by project
+val gradle_version: String by project
 
 plugins {
     kotlin("jvm") version "1.8.21"
@@ -10,6 +11,7 @@ plugins {
 
 group = "com.example"
 version = "0.0.1"
+
 application {
     mainClass.set("com.example.ApplicationKt")
 
@@ -29,4 +31,9 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junit_version")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:$junit_version")
+}
+
+tasks.wrapper {
+    gradleVersion = gradle_version
+    distributionType = Wrapper.DistributionType.BIN
 }
