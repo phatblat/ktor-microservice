@@ -13,6 +13,9 @@ fun main() {
             get("/") {
                 call.respondText("OK")
             }
+            get("/status") {
+                call.respond(mapOf("status" to "OK"))
+            }
         }
     }.start(wait = true)
     println("open http://localhost:8080")
